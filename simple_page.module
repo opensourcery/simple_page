@@ -1,0 +1,19 @@
+<?php
+/**
+ * @file
+ */
+define('SIMPLE_PAGE_REQUIRED_CTOOLS_API', '2.0-alpha');
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function simple_page_ctools_plugin_directory($module, $plugin) {
+  // Safety: go away if CTools is not at an appropriate version.
+  if (!module_invoke('ctools', 'api_version', SIMPLE_PAGE_REQUIRED_CTOOLS_API)) {
+    return;
+  }
+
+  if ($module == 'page_manager' && $plugin == 'task_handlers') {
+    return 'plugins/task_handlers';
+  }
+}

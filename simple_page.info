@@ -1,0 +1,4 @@
+name = Page Manager Simple Page
+description = Adds the ability to create pages using Page Manager without using Panels.
+core = 7.x
+dependencies[] = page_manager
